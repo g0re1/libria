@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="accountDao" class="model.dao.AccountDao">
+        <constructor-arg value="model.entity.Account" />
+    </bean>
+
+    <bean id="authorService" class="model.service.AuthorService">
+    </bean>
+
+    <bean id="authorDao" class="model.dao.AuthorDao">
+        <constructor-arg value="model.entity.Author" />
+    </bean>
+
+    <bean id="accountService" class="model.service.AccountService">
+    </bean>
+
+    <bean id="categoryDao" class="model.dao.CategoryDao">
+        <constructor-arg value="model.entity.Author" />
+    </bean>
+
+    <bean id="categoryService" class="model.service.CategoryService">
+    </bean>
+
+    <bean id="roomDao" class="model.dao.RoomDao">
+        <constructor-arg value="model.entity.Room" />
+    </bean>
+
+    <bean id="roomService" class="model.service.RoomService">
+    </bean>
+
+
+    <bean id="bookDao" class="model.dao.BookDao">
+        <constructor-arg value="model.entity.Room" />
+    </bean>
+
+    <bean id="bookService" class="model.service.BookService">
+    </bean>
+
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
+    <bean id="entityManagerFactory"
+          class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="jpaVendorAdapter" ref="jpaAdapter"/>
+        <property name="loadTimeWeaver">
+            <bean
+                    class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver" />
+        </property>
+    </bean>
+
+    <bean id="jpaAdapter"
+          class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+
+    <bean
+            class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+
+</beans>
