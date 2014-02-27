@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table( name = "author" )
+@Table( name = "category" )
 @SequenceGenerator( name = "seq", sequenceName = "seq_category" )
 @AttributeOverrides( { @AttributeOverride( name = "id", column = @Column( name = "category_id" ) ),
 		@AttributeOverride( name = "created", column = @Column( name = "category_created" ) ),

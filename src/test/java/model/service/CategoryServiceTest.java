@@ -1,6 +1,6 @@
 package model.service;
 
-import model.entity.Account;
+import model.entity.Category;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -23,12 +23,12 @@ import static org.junit.Assert.assertThat;
 public class CategoryServiceTest
 {
 	@Inject
-	private AccountService accountService;
+	private CategoryService categoryService;
 
 	@Test
-	public void testCreateAccount()
+	public void testCreateCategory()
 	{
-		final Account user = this.accountService.create( "user" );
-		assertThat( user.getName(), equalTo( "user" ) );
+		final Category category = this.categoryService.create( "category" );
+		assertThat( category.getName(), equalTo( "category" ) );
 	}
 }

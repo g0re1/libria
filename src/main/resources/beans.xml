@@ -18,7 +18,7 @@
     </bean>
 
     <bean id="categoryDao" class="model.dao.CategoryDao">
-        <constructor-arg value="model.entity.Author" />
+        <constructor-arg value="model.entity.Category" />
     </bean>
 
     <bean id="categoryService" class="model.service.CategoryService">
@@ -31,9 +31,8 @@
     <bean id="roomService" class="model.service.RoomService">
     </bean>
 
-
     <bean id="bookDao" class="model.dao.BookDao">
-        <constructor-arg value="model.entity.Room" />
+        <constructor-arg value="model.entity.Book" />
     </bean>
 
     <bean id="bookService" class="model.service.BookService">

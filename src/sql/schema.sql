@@ -37,6 +37,7 @@ create table room(
   book_account_id bigint not null, 
   book_author_id bigint not null,
   book_category_id bigint not null,
+  book_room_id bigint not null,
   book_name varchar(200) not null constraint bo_name unique,
   book_created timestamp,
   book_modified timestamp
@@ -53,6 +54,10 @@ alter table book
 alter table book 
     add constraint fk_book_category foreign key(book_category_id)
     references category;
+
+alter table book 
+    add constraint fk_book_room foreign key(book_room_id)
+    references book;
 
   
 

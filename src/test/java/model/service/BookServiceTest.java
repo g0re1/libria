@@ -43,7 +43,6 @@ public class BookServiceTest
 	@Inject
 	private RoomDao roomDao;
 
-    @Rollback(false)
 	@Before
 	public void setUp()
 	{
@@ -55,7 +54,7 @@ public class BookServiceTest
 
 	@Rollback( false )
 	@Test
-	public void testCreateAccount()
+	public void testCreateBook()
 	{
 		String name = "book";
 
